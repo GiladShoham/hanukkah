@@ -11,17 +11,10 @@
 {
     "hanukia": {
         "name": "hanukia",
-        "scope": "",
-        "version": "",
-        "defaultScope": "shohamgilad.hanukkah",
+        "scope": "shohamgilad.hanukkah",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "hanukkah/hanukia",
-        "config": {
-            "bitdev.react/react-env@2.1.14": {},
-            "teambit.envs/envs": {
-                "env": "bitdev.react/react-env"
-            }
-        }
+        "rootDir": "hanukkah/hanukia"
     },
     "$schema-version": "17.0.0"
 }
