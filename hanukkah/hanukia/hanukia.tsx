@@ -12,7 +12,7 @@ export const Hanukia: React.FC<HanukiaProps> = ({ on = 0 }) => {
       if (index === 5) {
         return true;
       }
-      if (index > 5 && 9 - on <= index) {
+      if (index > 5 && 10 - on <= index) {
         return true;
       }
       if (index < 5 && 9 - on <= index) {
