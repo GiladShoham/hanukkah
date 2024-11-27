@@ -1,0 +1,53 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import './styles.scss';
+
+export default class Hanukkah extends React.Component {
+  setOn = (index) => {
+    let checked = undefined;
+    const on = this.props.on;
+    if(on > 0) {
+      if(index === 5) {
+        return true;
+      }
+      if(index > 5 && 9 - on <= index) {
+        return true;
+      }
+      if(index < 5 && 9 - on <= index) {
+        return true;
+      }
+    }
+    return checked;
+  }
+
+  getCandles = (on = 0) => {
+    const candles = [...Array(9)].map((_, index) => <div key={`key-candle${index}`}>
+      <input type="checkbox" id={`candle${index}`} checked={this.setOn(index + 1)} />
+      <label htmlFor={`candle${index}`} className="candle">
+        <div className="flame-container">
+          <div className="flame-box"><div className="flame"></div></div>
+        </div>
+        <div className="stick"></div>
+      </label>
+    </div>)
+    return candles;
+  }
+
+  render() {
+    const { on } = this.props;
+    return (
+      <div className="main">
+        {this.getCandles(on)}
+      </div>
+    );
+  }
+}
+
+Hanukkah.propTypes = {
+  /** Number of candles to light  */
+  on: PropTypes.number,
+}
+
+Hanukkah.defaultProps = {
+  on: 0,
+}

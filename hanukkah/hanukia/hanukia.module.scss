@@ -1,0 +1,83 @@
+body{
+  background: #000;
+}
+.main{
+  width: 900px;
+  margin: 60px auto 0;
+}
+.candle{
+  width:100px;
+  float: left;
+  cursor: pointer;
+    .flame-container{
+      width:100px;
+      .flame-box{
+        transform: scaleX(0.01) scaleY(0.01);
+        transform-origin: 50% 100%;
+        width: 110px;
+        height: 120px;
+        margin-left: -4px;
+        transition: 0.4s 0.05s;
+          .flame{
+            display: block;
+            background: yellow;
+            width: 100px;
+            height: 100px;
+            border-radius: 40px 50px 150px 50px;
+            transform: rotate(45deg) translate(20px, 10px);
+            background: radial-gradient(ellipse at bottom right , rgba(56, 32, 175, 0.3) 25%, #1e5799 30%,#ed5050 40%,#eab64f 50%,#ffffdf 80%,#ffffaf 90%,#dd8249 100%,#dd8249 120%);
+            box-shadow: -2px -2px 5px 0px  #ffffcf, -10px -10px 40px rgba(255, 220, 220, 0.5), -10px -10px 90px rgba(255, 232, 135, 0.4);          
+      }
+    }
+  }
+    .stick{
+    width:50px;
+    height: 200px;
+    border-radius:5px;
+    background-color: #eee;
+    margin: 0 auto;
+    transform: perspective(50em) rotateX(50deg) scaleY(1.9);
+    background: linear-gradient(to bottom ,#777 45%,#555 72%,#000000 100%);
+    transition: 0.4s;
+  }
+  input[type="checkbox"]:checked+&{
+    .flame-box{
+      transform: scaleX(0.25) scaleY(0.9);
+      animation: skwush 8.2s 0.5s infinite;
+      .flame{
+        animation: jiggle 5s infinite;
+      }
+    }
+    .stick{
+      background: linear-gradient(to bottom, #fffcf2 0%,#fff9d8 20%,#fff9d8 45%,#474020 72%,#000000 100%);
+      transition: 0.4s;
+    }
+  }
+  &[for="candle4"]{
+    margin-top:-40px;
+  }
+}
+
+@keyframes skwush {
+    0%   {transform: scaleX(0.25) scaleY(0.9);}
+    15%  {transform: scaleX(0.25) scaleY(0.8);}
+    30%  {transform: scaleX(0.25) scaleY(0.9);}
+    45%  {transform: scaleX(0.25) scaleY(0.8);}
+    60%  {transform: scaleX(0.25) scaleY(1);}
+    75%  {transform: scaleX(0.25) scaleY(0.75);}
+    100% {transform: scaleX(0.25) scaleY(0.9);}
+}
+
+@keyframes jiggle {
+    0%   { border-radius: 40px 50px 150px 50px; }
+    5%   { border-radius: 60px 50px 90px 50px; }
+    10%  { border-radius: 40px 50px 150px 70px; }
+    30%  { border-radius: 100px 50px 150px 50px; }
+    75%  { border-radius: 40px 50px 150px 50px; }
+    80%  { border-radius: 80px 50px 90px 50px; }
+    100% { border-radius: 40px 50px 150px 50px; }
+}
+  
+input[type="checkbox"]{
+  display: none;
+}
