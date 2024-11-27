@@ -33,8 +33,8 @@ export const Hanukia: React.FC<HanukiaProps> = ({ on = 0 }) => {
           className={styles.checkbox}
         />
         <label htmlFor={`candle${index}`} className={styles.candle}>
-          <div className={styles["flame-container"]}>
-            <div className={styles["flame-box"]}>
+          <div className={styles['flame-container']}>
+            <div className={styles['flame-box']}>
               <div className={styles.flame}></div>
             </div>
           </div>
